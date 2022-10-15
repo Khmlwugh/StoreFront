@@ -1,7 +1,7 @@
 //Selectors
 const mainContainer = document.querySelector('.main');
 
-let url = 'http://127.0.0.1:3000/products'
+let url = 'http://127.0.0.1:3000/'
 
 
 async function CallAPI(url){
@@ -53,5 +53,26 @@ function renderProduct(container, array){
 }
 
 window.addEventListener('load', () => {
-  CallAPI(url).then(data => renderProduct(mainContainer, data))  
+  let search = sessionStorage.getItem('search')
+  if (search){
+    CallAPI(url + 'search?q=' + search).then(data => renderProduct(mainContainer, data));
+    console.log(url + '?' + search)
+  } else {
+    CallAPI(url + 'products').then(data => renderProduct(mainContainer, data))
+  }
+
+
 })
+
+
+const SearchButton = document.querySelector('.form-button')
+
+SearchButton.addEventListener('click', searchQuery)
+
+function searchQuery(event){
+  const SearchQuery = document.querySelector('.form-input');
+  console.log(SearchQuery.value)
+  sessionStorage.setItem('search', SearchQuery.value)
+  SearchQuery.value = ''
+
+}

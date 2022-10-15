@@ -17,6 +17,24 @@ h2{
     width: 20vw;
 }
 
+form input, form button{
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: aliceblue;
+}
+
+form button{
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+
+}
+
+form button:hover{
+    color: aliceblue;
+    background-color: black;
+}
 .main{
     background-color: #f1f1f1;
     height: 80vh;
