@@ -20,6 +20,8 @@ h2{
 .main{
     background-color: #f1f1f1;
     height: 80vh;
+    display: flex;
+    justify-content: center;
 }
 
 .header-navbar{
@@ -42,4 +44,42 @@ h2{
     justify-content: space-around;
     color: white;
     align-items: center;;
+}
+
+.product-container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 5px;
+    max-width: 23vw;
+    min-width: 20vw;
+    align-items: center;
+    height: 200px;
+    padding: 10px;
+}
+
+.product-image{
+    height: 100px;
+    width: 100px;
+}
+
+.product-name{
+    display: flex;
+    flex: 1;
+    text-align: center;
+    max-height: 50px;
+    margin: 10px 5px;
+}
+
+.product-price-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-price {
+    padding: 0px 10px;
+}
+
+.purchase-icon{
+    padding: 0px 10px;
 }
