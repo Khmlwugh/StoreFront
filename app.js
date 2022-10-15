@@ -71,8 +71,7 @@ SearchButton.addEventListener('click', searchQuery)
 
 function searchQuery(event){
   const SearchQuery = document.querySelector('.form-input');
-  console.log(SearchQuery.value)
-  sessionStorage.setItem('search', SearchQuery.value)
-  SearchQuery.value = ''
+  sessionStorage.setItem('search', SearchQuery.value);
+  SearchQuery.value = '';
 
 }

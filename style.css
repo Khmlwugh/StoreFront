@@ -24,11 +24,20 @@ form input, form button{
     background-color: aliceblue;
 }
 
+form input{
+    border: aliceblue 2px solid;
+    border-radius: 10px;
+}
+
+form input:hover{
+    border: black 2px solid;
+    transition: all 0.1s ease;
+}
+
 form button{
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 10px;
-
 }
 
 form button:hover{
