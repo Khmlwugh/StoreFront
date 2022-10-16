@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 .header{
@@ -45,10 +46,11 @@ form button:hover{
     background-color: black;
 }
 .main{
-    background-color: #f1f1f1;
-    height: 80vh;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px 0px 10vh 0px;
+    background-color: #f1f1f1;
 }
 
 .header-navbar{
