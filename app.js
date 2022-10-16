@@ -1,5 +1,6 @@
 //Selectors
 const mainContainer = document.querySelector('.main');
+const optionContainer = document.querySelector('.category-select')
 
 let url = 'http://127.0.0.1:3000/'
 
@@ -52,8 +53,29 @@ function renderProduct(container, array){
   })
 }
 
+function renderOptions(container, array){
+  array.forEach( category => {
+    
+    //Element creation
+    const option = document.createElement('option')
+    option.value = category.name
+    option.innerText = category.name
+    container.appendChild(option)
+    }
+  )
+}
+
+
+function showCategory(){
+  let url = 'http://127.0.0.1:3000/categories'
+  CallAPI(url).then()
+
+}
+
 window.addEventListener('load', () => {
   let search = sessionStorage.getItem('search')
+  CallAPI(url+'categories').then(data=> renderOptions(optionContainer, data));
+
   if (search){
     CallAPI(url + 'search?q=' + search).then(data => renderProduct(mainContainer, data));
     console.log(url + '?' + search)
