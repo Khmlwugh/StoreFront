@@ -1,15 +1,14 @@
-import { renderProduct, renderOptions } from "./utils.js";
+import { renderProduct, renderOptions, CallAPI } from "./utils.js";
 
-//Selectors
+//Setting Constants
 const mainContainer = document.querySelector('.main');
 const optionContainer = document.querySelector('.category-select')
 const url = 'http://127.0.0.1:3000/'
 const resetButton = document.querySelector('.header-navbar__btn')
 const title = document.querySelector('.title')
+const SearchButton = document.querySelector('.form-button')
 
-
-optionContainer.addEventListener('change', onClickOption)
-title.addEventListener('click', resetParams)
+//functions
 
 function resetParams(){
   sessionStorage.removeItem('category')
@@ -17,17 +16,28 @@ function resetParams(){
   location.reload()
 }
 
-resetButton.addEventListener('click', resetParams)
-
-
-async function CallAPI(url){
-  const response = await fetch(url);
-  let data = await response.json()
-  return data
+function onClickOption(event){
+  sessionStorage.setItem('category', event.target.value);
+  console.log(event.target.innerText)
+  let option = event.target.innexText
+  location.reload()
 }
 
+function searchQuery(event){
+  const SearchQuery = document.querySelector('.form-input');
+  sessionStorage.setItem('search', SearchQuery.value);
+  SearchQuery.value = '';
+
+}
+
+//AddingEventListeners
+optionContainer.addEventListener('change', onClickOption)
+title.addEventListener('click', resetParams)
+resetButton.addEventListener('click', resetParams)
+SearchButton.addEventListener('click', searchQuery)
 
 
+//Main Rendering Function
 window.addEventListener('load', () => {
   let search = sessionStorage.getItem('search')
   let category = sessionStorage.getItem('category')
@@ -42,22 +52,3 @@ window.addEventListener('load', () => {
     CallAPI(url + 'products').then(data => renderProduct(mainContainer, data))
   }
 })
-
-function onClickOption(event){
-  sessionStorage.setItem('category', event.target.value);
-  console.log(event.target.innerText)
-  let option = event.target.innexText
-  location.reload()
-}
-
-
-const SearchButton = document.querySelector('.form-button')
-
-SearchButton.addEventListener('click', searchQuery)
-
-function searchQuery(event){
-  const SearchQuery = document.querySelector('.form-input');
-  sessionStorage.setItem('search', SearchQuery.value);
-  SearchQuery.value = '';
-
-}

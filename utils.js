@@ -56,3 +56,9 @@ export function renderOptions(container, array){
     }
   )
 }
+
+export async function CallAPI(url){
+  const response = await fetch(url);
+  let data = await response.json()
+  return data
+}
