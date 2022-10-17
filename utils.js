@@ -38,12 +38,15 @@ export function renderProduct(container, array){
   })
 }
 
+
+
 export function renderOptions(container, array){
   array.forEach( category => {
     
     //Element creation
     const option = document.createElement('option')
-    option.value = category.name
+    option.classList.add('select-option')
+    option.value = category.id
     option.innerText = category.name
     container.appendChild(option)
     }
