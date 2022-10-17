@@ -13,9 +13,10 @@
     min-height: 10vh;
 }
 
-h2{
+h1{
     text-align: center;
     width: 20vw;
+    cursor: pointer;
 }
 
 form input, form button{
@@ -26,12 +27,12 @@ form input, form button{
 }
 
 form input{
-    border: aliceblue 2px solid;
+    border: black 2px solid;
     border-radius: 10px;
 }
 
 form input:hover{
-    border: black 2px solid;
+    border: aliceblue 2px solid;
     transition: all 0.1s ease;
 }
 
@@ -39,11 +40,13 @@ form button{
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 10px;
+    padding: 10px 15px;
 }
 
 form button:hover{
     color: aliceblue;
     background-color: black;
+
 }
 .main{
     display: flex;
@@ -52,6 +55,7 @@ form button:hover{
     margin: 0px 0px 10vh 0px;
     background-color: #f1f1f1;
     height: 100%;
+    min-height: 80vh;
 }
 
 .header-navbar{
@@ -81,11 +85,13 @@ form button:hover{
     display: flex;
     flex-direction: column;
     margin: 10px 5px;
-    max-width: 23vw;
-    min-width: 20vw;
+    max-width: 200px;
+    width: 20vw;
     align-items: center;
     height: 200px;
     padding: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px gray;
 }
 
 .product-image{
@@ -112,4 +118,42 @@ form button:hover{
 
 .purchase-icon{
     padding: 0px 10px;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;  
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.05s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+select:hover{
+    font-size: 1.0em;
+    border: 3px black solid;
+}
+
+.header-navbar__btn{
+    border-radius: 10px;
+    border: none;
+    background-color: aliceblue;
+    font-size: 16px;
+    transition: all 0.5s ease;
+    text-align: center;
+    padding: 0px 25px;
+}
+
+.header-navbar__btn:hover{
+    color:white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.discounted{
+    color: red;
+    font-weight: bold;
 }

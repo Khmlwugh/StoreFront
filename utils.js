@@ -1,6 +1,7 @@
 export function renderProduct(container, array){
   array.forEach(product => {
-
+    let current_price
+    
     //Elements creation
     const ProductContainer = document.createElement('div');
     const ProductName = document.createElement('div');
@@ -21,7 +22,10 @@ export function renderProduct(container, array){
     ProductPrice.classList.add('product-price')
     PurchaseIcon.classList.add('purchase-ícon')
     PurchaseIcon.classList.add('ri-shopping-cart-line')
-    ProductPrice.innerText = '$' + product.price;
+    if (product.discount){
+      ProductPrice.classList.add('discounted')
+    }
+    ProductPrice.innerText = '$ ' + (product.price * (100 - product.discount) / 100);
 
     //Appending children to the Product Container
     ProductContainer.appendChild(ProductImage);

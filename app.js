@@ -5,15 +5,19 @@ const mainContainer = document.querySelector('.main');
 const optionContainer = document.querySelector('.category-select')
 const url = 'http://127.0.0.1:3000/'
 const resetButton = document.querySelector('.header-navbar__btn')
+const title = document.querySelector('.title')
 
 
 optionContainer.addEventListener('change', onClickOption)
+title.addEventListener('click', resetParams)
 
-resetButton.addEventListener('click', () => {
+function resetParams(){
   sessionStorage.removeItem('category')
   sessionStorage.removeItem('search')
   location.reload()
-})
+}
+
+resetButton.addEventListener('click', resetParams)
 
 
 async function CallAPI(url){
