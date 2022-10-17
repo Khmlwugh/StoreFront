@@ -48,6 +48,23 @@ form button:hover{
     background-color: black;
 
 }
+
+.ri-shopping-cart-line{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.ri-shopping-cart-line:hover{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+
 .main{
     display: flex;
     justify-content: center;
