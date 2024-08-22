@@ -1,2 +1,2 @@
 # StoreFront
-The front end project from the Bsale technical challenge
+The front end project from the a technical challenge
