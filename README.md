@@ -20,8 +20,8 @@ The frontend logic (rendering, event handling, DOM manipulation, fetch calls) is
 
 ```bash
 # clone and open
-git clone https://github.com/Khmlwugh/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/Khmlwugh/StoreFront.git
+cd StoreFront
 npx serve .
 ```
 
